@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Loja</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">Black <span>Pump</span></div>
+
+  <nav id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="loja.html">Loja</a>
+    <a href="carrinho.html">Carrinho</a>
+  </nav>
+</header>
+
+<div class="filtros">
+  <input type="text" id="busca" placeholder="Buscar produto...">
+
+  <select id="filtroMarca">
+    <option value="">Todas marcas</option>
+    <option value="Black Pump">Black Pump</option>
+    <option value="Backyardigans">Backyardigans</option>
+    <option value="Max Titanium">Max Titanium</option>
+    <option value="Growth">Growth</option>
+    <option value="Integral">Integral</option>
+  </select>
+
+  <select id="filtroCategoria">
+    <option value="">Todas categorias</option>
+    <option value="Whey">Whey</option>
+    <option value="BCAA">BCAA</option>
+    <option value="Vestuário">Vestuário</option>
+    <option value="Creatina">Creatina</option>
+    <option value="Garrafas">Garrafas</option>
+  </select>
+
+  <button onclick="filtrar()">Filtrar</button>
+</div>
+
+<section class="loja">
+  <h2>Produtos</h2>
+    <div id="produtos" class="produtos"></div>
+
+    <script src="js/loja.js"></script>
+</section>
+
+<script>
+  const usuarioId = localStorage.getItem("usuarioId");
+  const nav = document.getElementById("navLinks");
+
+  if (usuarioId) {
+    nav.innerHTML += '<a href="conta.html">Conta</a>';
+  } else {
+    nav.innerHTML += '<a href="login.html">Login</a>';
+  }
+</script>
+
+</body>
+</html>

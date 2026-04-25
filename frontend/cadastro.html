@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-page">
+
+<div class="container">
+  <div class="logo">
+    Black <span>Pump</span>
+  </div>
+
+  <h2>Criar Conta</h2>
+
+  <form id="formCadastro">
+
+    <input type="text" id="nome" placeholder="Nome" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="password" id="senha" placeholder="Senha" required>
+
+    <input type="text" id="telefone" placeholder="Telefone" required>
+    <input type="text" id="endereco" placeholder="Endereço" required>
+    <input type="text" id="cidade" placeholder="Cidade" required>
+    <input type="text" id="estado" placeholder="Estado" required>
+
+    <!-- FOTO OPCIONAL -->
+    <input type="file" id="foto">
+
+    <button type="submit">Cadastrar</button>
+  </form>
+
+  <p>Já tem conta? <a href="login.html">Login</a></p>
+</div>
+
+<script src="js/auth.js"></script>
+</body>
+</html>

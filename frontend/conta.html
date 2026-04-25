@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Conta</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="conta-page">
+
+  <div class="top-bar">
+    <img src="img/logo.png" class="logo-top">
+  </div>
+
+  <a href="index.html" class="btn-voltar">← Voltar</a>
+
+  <div class="perfil-container">
+    <img id="fotoPerfil" class="foto-perfil">
+    <input type="file" id="inputFoto">
+    <button onclick="enviarFoto()">Alterar Foto</button>
+  </div>
+
+  <div class="card-conta">
+    <p><strong>Nome:</strong> <span id="nome"></span></p>
+    <p><strong>Email:</strong> <span id="email"></span></p>
+    <p><strong>Telefone:</strong> <span id="telefone"></span></p>
+    <p><strong>Endereço:</strong> <span id="endereco"></span></p>
+    <p><strong>Cidade:</strong> <span id="cidade"></span></p>
+    <p><strong>Estado:</strong> <span id="estado"></span></p>
+  </div>
+
+  <div class="card-conta">
+    <h2>Meus pedidos</h2>
+    <div id="lista-pedidos"></div>
+  </div>
+
+  <button class="btn-sair" onclick="logout()">Sair</button>
+
+  <script src="js/conta.js"></script>
+</body>
+</html>

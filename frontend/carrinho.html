@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Carrinho</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="Home">
+
+<header class="navbar">
+  <div class="logo">Black <span>Pump</span></div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="loja.html">Loja</a>
+  </nav>
+</header>
+
+<section class="loja">
+  <h2>Seu Carrinho</h2>
+
+  <div id="listaCarrinho" class="produtos"></div>
+</section>
+
+<section class="resumo">
+  <h3>Total: <span id="total">R$ 0,00</span></h3>
+
+  <select id="pagamento">
+    <option value="">Forma de pagamento</option>
+    <option value="Pix">Pix</option>
+    <option value="Cartão">Cartão</option>
+    <option value="Boleto">Boleto</option>
+  </select>
+
+  <button onclick="finalizarCompra()" class="btn-finalizar">
+    Finalizar Compra
+  </button>
+</section>
+
+<script src="js/carrinho.js"></script>
+
+</body>
+</body>
+</html>
