@@ -44,8 +44,27 @@ function carregarCarrinho() {
 function removerItem(id) {
   fetch(`http://localhost:3000/carrinho/${id}`, {
     method: "DELETE"
-  })
-    .then(() => carregarCarrinho());
+  }).then(() => carregarCarrinho());
+}
+
+function mostrarCamposPagamento() {
+  const pagamento = document.getElementById("pagamento").value;
+
+  document.getElementById("campos-cartao").style.display = "none";
+  document.getElementById("campos-pix").style.display = "none";
+  document.getElementById("campos-boleto").style.display = "none";
+
+  if (pagamento === "cartao") {
+    document.getElementById("campos-cartao").style.display = "block";
+  }
+
+  if (pagamento === "pix") {
+    document.getElementById("campos-pix").style.display = "block";
+  }
+
+  if (pagamento === "boleto") {
+    document.getElementById("campos-boleto").style.display = "block";
+  }
 }
 
 function finalizarCompra() {
@@ -54,6 +73,18 @@ function finalizarCompra() {
   if (!pagamento) {
     alert("Escolha uma forma de pagamento!");
     return;
+  }
+
+  if (pagamento === "cartao") {
+    const nome = document.getElementById("nomeCartao").value;
+    const numero = document.getElementById("numeroCartao").value;
+    const validade = document.getElementById("validadeCartao").value;
+    const cvv = document.getElementById("cvvCartao").value;
+
+    if (!nome || !numero || !validade || !cvv) {
+      alert("Preencha todos os dados do cartão!");
+      return;
+    }
   }
 
   fetch("http://localhost:3000/finalizar-pedido", {

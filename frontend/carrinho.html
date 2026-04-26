@@ -25,12 +25,31 @@
 <section class="resumo">
   <h3>Total: <span id="total">R$ 0,00</span></h3>
 
-  <select id="pagamento">
-    <option value="">Forma de pagamento</option>
-    <option value="Pix">Pix</option>
-    <option value="Cartão">Cartão</option>
-    <option value="Boleto">Boleto</option>
+<div class="pagamento-box">
+  <h3>Pagamento</h3>
+
+  <select id="pagamento" onchange="mostrarCamposPagamento()">
+    <option value="">Escolha uma forma de pagamento</option>
+    <option value="pix">Pix</option>
+    <option value="cartao">Cartão de Crédito</option>
+    <option value="boleto">Boleto</option>
   </select>
+
+  <div id="campos-cartao" style="display: none;">
+    <input type="text" id="nomeCartao" placeholder="Nome no cartão">
+    <input type="text" id="numeroCartao" placeholder="Número do cartão">
+    <input type="text" id="validadeCartao" placeholder="Validade MM/AA">
+    <input type="text" id="cvvCartao" placeholder="CVV">
+  </div>
+
+  <div id="campos-pix" style="display: none;">
+    <p>Chave Pix fictícia: blackpump@pagamento.com</p>
+  </div>
+
+  <div id="campos-boleto" style="display: none;">
+    <p>O boleto será gerado após finalizar a compra.</p>
+  </div>
+</div>
 
   <button onclick="finalizarCompra()" class="btn-finalizar">
     Finalizar Compra
@@ -39,6 +58,6 @@
 
 <script src="js/carrinho.js"></script>
 
-</body>
+
 </body>
 </html>
