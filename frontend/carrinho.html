@@ -1,63 +1,66 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <title>Carrinho</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body class="Home">
 
-<header class="navbar">
-  <div class="logo">Black <span>Pump</span></div>
+  <header class="navbar">
+    <div class="logo">Black <span>Pump</span></div>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="loja.html">Loja</a>
-  </nav>
-</header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="loja.html">Loja</a>
+    </nav>
+  </header>
 
-<section class="loja">
-  <h2>Seu Carrinho</h2>
+  <section class="loja">
+    <h2>Seu Carrinho</h2>
 
-  <div id="listaCarrinho" class="produtos"></div>
-</section>
+    <div id="listaCarrinho" class="produtos"></div>
+  </section>
 
-<section class="resumo">
-  <h3>Total: <span id="total">R$ 0,00</span></h3>
+  <section class="resumo">
+    <h3>Total: <span id="total">R$ 0,00</span></h3>
 
-<div class="pagamento-box">
-  <h3>Pagamento</h3>
+    <div class="pagamento-box">
+      <h3>Pagamento</h3>
 
-  <select id="pagamento" onchange="mostrarCamposPagamento()">
-    <option value="">Escolha uma forma de pagamento</option>
-    <option value="pix">Pix</option>
-    <option value="cartao">Cartão de Crédito</option>
-    <option value="boleto">Boleto</option>
-  </select>
+      <select id="pagamento" onchange="mostrarCamposPagamento()">
+        <option value="">Escolha uma forma de pagamento</option>
+        <option value="pix">Pix</option>
+        <option value="cartao">Cartão de Crédito</option>
+        <option value="boleto">Boleto</option>
+      </select>
 
-  <div id="campos-cartao" style="display: none;">
-    <input type="text" id="nomeCartao" placeholder="Nome no cartão">
-    <input type="text" id="numeroCartao" placeholder="Número do cartão">
-    <input type="text" id="validadeCartao" placeholder="Validade MM/AA">
-    <input type="text" id="cvvCartao" placeholder="CVV">
-  </div>
+      <div id="campos-cartao" style="display: none;">
+        <input type="text" id="nomeCartao" placeholder="Nome no cartão">
+        <input type="text" id="numeroCartao" placeholder="Número do cartão">
+        <input type="text" id="validadeCartao" placeholder="Validade MM/AA">
+        <input type="text" id="cvvCartao" placeholder="CVV">
+      </div>
 
-  <div id="campos-pix" style="display: none;">
-    <p>Chave Pix fictícia: blackpump@pagamento.com</p>
-  </div>
+      <div id="campos-pix" style="display: none;">
+        <p>Chave Pix fictícia: blackpump@pagamento.com</p>
+      </div>
 
-  <div id="campos-boleto" style="display: none;">
-    <p>O boleto será gerado após finalizar a compra.</p>
-  </div>
-</div>
+      <div id="campos-boleto" style="display: none;">
+        <p>O boleto será gerado após finalizar a compra.</p>
+      </div>
+    </div>
 
-  <button onclick="finalizarCompra()" class="btn-finalizar">
-    Finalizar Compra
-  </button>
-</section>
+    <button onclick="finalizarCompra()" class="btn-finalizar">
+      Finalizar Compra
+    </button>
+  </section>
 
-<script src="js/carrinho.js"></script>
+  <script src="js/carrinho.js"></script>
 
 
 </body>
+
 </html>

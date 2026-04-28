@@ -1,7 +1,7 @@
 const bcrypt = require("bcryptjs");
 const db = require("../models/db");
 
-// CADASTRO
+
 exports.cadastro = async (req, res) => {
   const { nome, email, senha, telefone, endereco, cidade, estado } = req.body;
 
@@ -24,7 +24,7 @@ exports.cadastro = async (req, res) => {
   }
 };
 
-// 🔥 LOGIN CORRIGIDO
+
 exports.login = (req, res) => {
   const { email, senha } = req.body;
 
@@ -46,14 +46,14 @@ exports.login = (req, res) => {
         return res.status(400).json({ erro: "Senha incorreta" });
       }
 
-      // ✅ RESPOSTA ÚNICA E CORRETA
+
       res.json({
         usuarioId: usuario.id
       });
     }
   );
 };
-// BUSCAR USUÁRIO
+
 exports.getUsuario = (req, res) => {
   const { id } = req.query;
 
@@ -66,7 +66,7 @@ exports.getUsuario = (req, res) => {
   );
 };
 
-// UPLOAD FOTO
+
 exports.uploadFoto = (req, res) => {
   const { usuarioId } = req.body;
 

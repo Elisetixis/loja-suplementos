@@ -29,13 +29,13 @@ function carregarProdutos(url = API) {
     });
 }
 
-/* 🔼 AUMENTAR */
+
 function aumentar(id) {
   const span = document.getElementById(`qtd-${id}`);
   span.innerText = Number(span.innerText) + 1;
 }
 
-/* 🔽 DIMINUIR */
+
 function diminuir(id) {
   const span = document.getElementById(`qtd-${id}`);
   let valor = Number(span.innerText);
@@ -45,7 +45,7 @@ function diminuir(id) {
   }
 }
 
-/* 🛒 ADICIONAR COM QUANTIDADE */
+
 function adicionarCarrinho(produtoId) {
   const usuarioId = localStorage.getItem("usuarioId");
 
@@ -68,13 +68,13 @@ function adicionarCarrinho(produtoId) {
       quantidade: quantidade
     })
   })
-  .then(res => res.json())
-  .then(() => {
-    alert(`Adicionado ao carrinho (x${quantidade})`);
-  });
+    .then(res => res.json())
+    .then(() => {
+      alert(`Adicionado ao carrinho (x${quantidade})`);
+    });
 }
 
-/* 🔍 FILTRO */
+
 function filtrar() {
   const busca = document.getElementById('busca').value;
   const marca = document.getElementById('filtroMarca').value;

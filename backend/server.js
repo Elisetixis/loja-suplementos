@@ -14,7 +14,7 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 const authRoutes = require("./routes/authRoutes");
 app.use("/auth", authRoutes);
 
-/* PRODUTOS */
+
 app.get("/produtos", (req, res) => {
   const { marca, busca, categoria } = req.query;
 
@@ -42,7 +42,7 @@ app.get("/produtos", (req, res) => {
   });
 });
 
-/* CARRINHO */
+
 app.post("/carrinho", (req, res) => {
   const { usuario_id, produto_id, quantidade } = req.body;
 
@@ -81,7 +81,7 @@ app.delete("/carrinho/:id", (req, res) => {
   });
 });
 
-/* PEDIDOS DO USUÁRIO */
+
 app.get("/pedidos/usuario/:usuarioId", (req, res) => {
   const { usuarioId } = req.params;
 
@@ -106,7 +106,7 @@ app.get("/pedidos/usuario/:usuarioId", (req, res) => {
   });
 });
 
-/* FINALIZAR PEDIDO */
+
 app.post("/finalizar-pedido", (req, res) => {
   const { usuario_id } = req.body;
 

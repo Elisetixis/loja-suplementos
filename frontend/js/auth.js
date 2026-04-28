@@ -1,6 +1,6 @@
 const API = "http://localhost:3000/auth";
 
-// LOGIN
+
 const formLogin = document.getElementById("formLogin");
 
 if (formLogin) {
@@ -27,7 +27,7 @@ if (formLogin) {
   });
 }
 
-// CADASTRO
+
 const formCadastro = document.getElementById("formCadastro");
 
 if (formCadastro) {
@@ -43,7 +43,7 @@ if (formCadastro) {
     const estado = document.getElementById("estado").value;
     const foto = document.getElementById("foto").files[0];
 
-    // CADASTRO
+
     const res = await fetch(`${API}/cadastro`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -58,7 +58,7 @@ if (formCadastro) {
       return alert(data.erro);
     }
 
-    // LOGIN AUTOMÁTICO
+
     const loginRes = await fetch(`${API}/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -70,7 +70,7 @@ if (formCadastro) {
 
     localStorage.setItem("usuarioId", usuarioId);
 
-    // UPLOAD FOTO (SE EXISTIR)
+
     if (foto) {
       const formData = new FormData();
       formData.append("foto", foto);

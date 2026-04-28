@@ -31,7 +31,7 @@ fetch(`${API}/usuario?id=${usuarioId}`)
     alert("Erro ao carregar dados do usuário");
   });
 
-/* BUSCAR PEDIDOS */
+
 fetch(`http://localhost:3000/pedidos/usuario/${usuarioId}`)
   .then(res => res.json())
   .then(pedidos => {
